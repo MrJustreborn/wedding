@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="de.hof.university.smarthome.configurator_backend_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>de.hof.university.smarthome.configurator.core.Category</class>
+    <class>de.hof.university.smarthome.configurator.core.Position</class>
+    <class>de.hof.university.smarthome.configurator.core.Article</class>
+    <class>de.hof.university.smarthome.configurator.core.SmarthomeCentral</class>
+    <class>de.hof.university.smarthome.configurator.core.Question</class>
+    <class>de.hof.university.smarthome.configurator.core.Offer</class>
+    <class>de.hof.university.smarthome.configurator.core.Attribute</class>
+    <class>de.hof.university.smarthome.configurator.core.AttributeValue</class>
+    <class>de.hof.university.smarthome.configurator.core.Answer</class>
+    <class>de.mjrb.wedding.core.Survey</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sharthome-configurator?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="mysql"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="mysql"/>
+    </properties>
+  </persistence-unit>
+</persistence>
