@@ -7,6 +7,7 @@ package de.mjrb.wedding.resources;
 
 import de.mjrb.wedding.api.Answer;
 import de.mjrb.wedding.api.Answers;
+import de.mjrb.wedding.api.UpdateAnswers;
 import de.mjrb.wedding.core.Survey;
 import de.mjrb.wedding.core.SurveyDAO;
 import io.dropwizard.hibernate.UnitOfWork;
@@ -39,7 +40,6 @@ public class SurveyResource {
     @POST
     @UnitOfWork
     public Response addSurvey(Survey[] survey) {
-//        System.out.println(Arrays.toString(survey));
 
         for (Survey s : survey) {
             try {
@@ -49,6 +49,23 @@ public class SurveyResource {
             }
         }
 
+        return Response.ok().build();
+    }
+    
+    @POST
+    @Path("update")
+    @UnitOfWork
+    public Response updateSurvey(UpdateAnswers update) {
+        
+        List<Survey> surv = dao.findId(update.getQuestion());
+        
+        for(Survey s : surv) {
+            if(update.getAnswers().contains(s.getAnswer())) {
+                s.setAnswer(update.getNewAnswer());
+                dao.update(s);
+            }
+        }
+        
         return Response.ok().build();
     }
 

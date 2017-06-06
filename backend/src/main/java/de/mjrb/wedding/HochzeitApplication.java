@@ -2,12 +2,16 @@ package de.mjrb.wedding;
 
 import de.mjrb.wedding.core.Survey;
 import de.mjrb.wedding.core.SurveyDAO;
+import de.mjrb.wedding.resources.HtmlResource;
 import de.mjrb.wedding.resources.SurveyResource;
 import io.dropwizard.Application;
+import io.dropwizard.Configuration;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.views.ViewBundle;
 import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 
@@ -32,6 +36,8 @@ public class HochzeitApplication extends Application<HochzeitConfiguration> {
     @Override
     public void initialize(final Bootstrap<HochzeitConfiguration> bootstrap) {
         bootstrap.addBundle(hibernate);
+        bootstrap.addBundle(new ViewBundle<>());
+        bootstrap.addBundle(new AssetsBundle());
     }
 
     @Override
@@ -45,6 +51,7 @@ public class HochzeitApplication extends Application<HochzeitConfiguration> {
             .addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), false, "/*");
         
         environment.jersey().register(new SurveyResource(dao));
+        environment.jersey().register(new HtmlResource(dao));
     }
 
 }
