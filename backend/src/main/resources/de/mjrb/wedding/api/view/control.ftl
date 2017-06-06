@@ -27,19 +27,61 @@ var surveyJSON = {
      type: "text",
      isRequired: true,
      name: "question2",
-     title: "Nennen Sie etwas, das man an den PC anschließt."
+     title: "Nennen Sie eine beliebte Süßspeise."
     },
     {
      type: "text",
      isRequired: true,
      name: "question3",
-     title: "Nennen Sie etwas, dass Babys machen."
+     title: "Nennen Sie etwas, das auf [...] endet."
     },
     {
      type: "text",
      isRequired: true,
      name: "question4",
-     title: "Nennen Sie irgendetwas."
+     title: "Nennen Sie ein Tier mit drei Buchstaben."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "question5",
+     title: "Nennen Sie etwas, das man an den PC anschließt."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "choice1",
+     title: "Junge oder Mädchen?"
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "finalquestion1",
+     title: "Nennen Sie etwas, das man nur einmal in der Woche wäscht."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "finalquestion2",
+     title: "Nennen Sie einen Jungennamen."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "finalquestion3",
+     title: "Nennen Sie ein Mädchennamen."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "finalquestion4",
+     title: "Nennen Sie ein beliebtes Reiseziel."
+    },
+    {
+     type: "text",
+     isRequired: true,
+     name: "finalquestion5",
+     title: "Nennen Sie etwas, das sich auf sauer reimt."
     }
    ]
   }
